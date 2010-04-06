@@ -78,14 +78,13 @@ jQuery.fn.tag = function() {
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') dest_language = dest_lang.val();
         else dest_language = dest_lang.text();        
       }else dest_language = P[usecount].result_language;
-        
       google.language.translate(translate, original_language, dest_language, function(result) {
         if(!result.error) {
           var tagname = jQuery(P[usecount].result).tag();
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
           else jQuery(P[usecount].result).text(result.translation);
           if(P[usecount].after_translate && typeof(P[usecount].after_translate) != 'undefined') P[usecount].after_translate(translate, result.translation);
-        }
+        }else console.log(result);
       });
     }
   };

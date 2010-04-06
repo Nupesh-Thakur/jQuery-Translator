@@ -64,7 +64,7 @@ jQuery.fn.tag = function() {
       if(trans){
         tagname = trans.tag();
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') translate = trans.val();
-        else translate = trans.text();
+        else translate = trans.html();
       }
       
       if(origin_lang){

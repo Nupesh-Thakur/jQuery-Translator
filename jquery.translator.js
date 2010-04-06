@@ -65,6 +65,7 @@ jQuery.fn.tag = function() {
         tagname = trans.tag();
         if(tagname == 'input' || tagname == 'select' || tagname == 'textarea') translate = trans.val();
         else translate = trans.html();
+        console.log(translate);
       }
       
       if(origin_lang){
@@ -84,7 +85,7 @@ jQuery.fn.tag = function() {
           if( tagname == "input" || tagname == "select" || tagname == "textarea") jQuery(P[usecount].result).val(result.translation);
           else jQuery(P[usecount].result).text(result.translation);
           if(P[usecount].after_translate && typeof(P[usecount].after_translate) != 'undefined') P[usecount].after_translate(translate, result.translation);
-        }else console.log(result);
+        }
       });
     }
   };
